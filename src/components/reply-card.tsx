@@ -50,6 +50,11 @@ export function ReplyCard({
           reflectionId,
           mentorName,
           question,
+          originalReply: content,
+          previousFollowups: items.map((item) => ({
+            question: item.question,
+            answer: item.answer,
+          })),
         }),
       });
 

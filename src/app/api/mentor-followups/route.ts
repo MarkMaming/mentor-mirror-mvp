@@ -11,6 +11,16 @@ const schema = z.object({
   reflectionId: z.string().uuid(),
   mentorName: z.string().trim().min(1),
   question: z.string().trim().min(3).max(1000),
+  originalReply: z.string().trim().min(1).max(10000).optional(),
+  previousFollowups: z
+    .array(
+      z.object({
+        question: z.string().trim().min(1).max(1000),
+        answer: z.string().trim().min(1).max(10000),
+      }),
+    )
+    .max(20)
+    .optional(),
 });
 
 export async function POST(request: Request) {
@@ -88,6 +98,8 @@ export async function POST(request: Request) {
   const answer = generateMentorFollowupReply({
     profile,
     question: parsed.data.question,
+    originalReply: parsed.data.originalReply,
+    previousFollowups: parsed.data.previousFollowups,
   });
 
   const { data: followup, error: insertError } = await supabase
