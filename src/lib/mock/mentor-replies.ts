@@ -32,6 +32,13 @@ type PersonaSeed = {
   avoidAdvice: string[];
   decisiveView: string;
   actionStyle: string;
+  voiceHooks?: {
+    reflectionOpeners: string[];
+    reflectionBridges: string[];
+    reflectionClosers: string[];
+    followupOpeners: string[];
+    followupClosers: string[];
+  };
 };
 
 const personaLibrary: PersonaSeed[] = [
@@ -60,6 +67,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要只图安稳", "不要只图眼前收益"],
     decisiveView: "你真正要选的不是一份工作，而是一条会塑造你品性与能力的轨道。",
     actionStyle: "先写下你愿意坚持五年的那个标准，再倒推选项。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我先不替你着急下结论。",
+        "这段复盘里，我更在意的是你想成为什么样的人。",
+      ],
+      reflectionBridges: [
+        "从更长的时间看，真正重要的不是一时得失。",
+        "如果把时间拉长，你会更容易看清轻重。",
+      ],
+      reflectionClosers: [
+        "先把方向守正，后面的路自然会越走越稳。",
+        "你现在最该做的，不是图快，而是把路走正。",
+      ],
+      followupOpeners: ["你这个追问很好，说明你开始往根上想了。"],
+      followupClosers: ["把心放稳，把标准写清，再行动。"],
+    },
   },
   {
     matchers: ["查理", "charlie munger", "芒格"],
@@ -88,6 +111,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要因为焦虑把稳定误当好选择", "不要把一次 offer 当成人生终局"],
     decisiveView: "你不是在两个选项里挑一个更顺眼的，而是在避免一个会把你拖慢五年的坏选择。",
     actionStyle: "写三列表：长期坑、三年复利、退出成本。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "先把那些听起来漂亮的话放到一边。",
+        "我更关心的是，这件事会在哪些地方伤到你。",
+      ],
+      reflectionBridges: [
+        "大多数人不是输在不知道，而是输在自欺。",
+        "真正有用的判断，往往从排除蠢事开始。",
+      ],
+      reflectionClosers: [
+        "别急着追求完美答案，先别犯明显的大错。",
+        "你现在需要的不是鼓励，而是更清醒的筛选标准。",
+      ],
+      followupOpeners: ["这就问到点子上了。", "这个问题终于接近核心了。"],
+      followupClosers: ["继续反着想，你会更快看见坑。"],
+    },
   },
   {
     matchers: ["奥普拉", "oprah"],
@@ -114,6 +153,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要拿体面掩盖委屈", "不要把恐惧误当成理性"],
     decisiveView: "你要处理的不是表面上的职业选择，而是你愿不愿意为真实的自己负责。",
     actionStyle: "先写下你的真实感受和真正想保住的东西，再决定。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我想先抱一抱你这份复杂感受。",
+        "你不需要立刻变得坚强，先允许自己诚实。",
+      ],
+      reflectionBridges: [
+        "很多时候，真正拯救我们的，是承认感受而不是压住感受。",
+        "如果一段关系或一种处境一直让你缩小，那就值得认真对待。",
+      ],
+      reflectionClosers: [
+        "请先对自己温柔，然后再做决定。",
+        "真正对的决定，通常不会让你越来越背离自己。",
+      ],
+      followupOpeners: ["谢谢你继续把心里的话拿出来。"],
+      followupClosers: ["先对自己的感受诚实，答案会更清楚。"],
+    },
   },
   {
     matchers: ["马斯克", "elon musk"],
@@ -142,6 +197,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要在两个普通选项之间纠结太久", "不要用安全感替代成长判断"],
     decisiveView: "你要选的不是一个更稳的安排，而是一个能把你迅速推向高难度问题中心的位置。",
     actionStyle: "24 小时内做最小验证：找人、问真问题、拿真实反馈。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "先停，别继续在表面上绕圈。",
+        "你写的这些，真正有价值的信息其实只有一小部分。",
+      ],
+      reflectionBridges: [
+        "问题不在于你想得不够多，而在于你还没拆到最底层。",
+        "凡是能实验验证的，就别靠脑内空转。",
+      ],
+      reflectionClosers: [
+        "去验证，别再猜。",
+        "先打一枪，看结果，再调方向。",
+      ],
+      followupOpeners: ["好，这个问题开始像工程问题了。"],
+      followupClosers: ["少想十步，先验证一步。"],
+    },
   },
   {
     matchers: ["杨绛"],
@@ -168,6 +239,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要为外界评价消耗自己", "不要在焦虑里过度反应"],
     decisiveView: "你需要的不是更激烈的比较，而是一个不会长期搅乱你内在秩序的选择。",
     actionStyle: "先停下来，删掉不必要的噪音，再做判断。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我读这段话，先感到的是你心里有点乱。",
+        "有些决定，越急越容易失真。",
+      ],
+      reflectionBridges: [
+        "人一乱，就容易把小事看大，把外界看重。",
+        "很多时候，不是事情太难，而是心没安顿好。",
+      ],
+      reflectionClosers: [
+        "先把心放平，事情会显出本来的大小。",
+        "你不妨先稳一稳，再作判断。",
+      ],
+      followupOpeners: ["你继续问得很好，不过还是要慢一点。"],
+      followupClosers: ["别急，先让自己安静下来。"],
+    },
   },
   {
     matchers: ["李开复", "kai-fu lee", "kaifu lee"],
@@ -194,6 +281,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要只因为眼前安全感封死未来", "不要把短期名头当长期价值"],
     decisiveView: "现在最值钱的，不是眼前这份安排的稳不稳，而是它会把你带到哪个能力层级。",
     actionStyle: "写下三年后的目标画像，再倒推今天的选择。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我会先把你的问题放进更长的成长周期里看。",
+        "眼前这一步当然重要，但更重要的是它把你带向哪里。",
+      ],
+      reflectionBridges: [
+        "很多人做错选择，不是因为不努力，而是因为阶段判断失真。",
+        "你要看的不是短期输赢，而是未来曲线是不是更陡。",
+      ],
+      reflectionClosers: [
+        "把时间尺度拉长，很多焦虑会自动降噪。",
+        "先看三年后的你会感谢今天的哪个决定。",
+      ],
+      followupOpeners: ["这个追问很有价值，我们继续往长期看。"],
+      followupClosers: ["继续把问题放进三到五年的成长坐标里。"],
+    },
   },
   {
     matchers: ["史蒂夫", "乔布斯", "steve jobs"],
@@ -220,6 +323,22 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要为了标准答案放弃独特判断", "不要把忙碌误当成创造"],
     decisiveView: "你在选的不是一份工作，而是一个会不会把你训练成平庸之人的系统。",
     actionStyle: "删掉次要比较，只留下“我愿意把作品感托付给哪条路”这个问题。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我对这段复盘最大的警觉，是它有点太像标准答案了。",
+        "别急着证明自己很合理，先问这件事有没有生命力。",
+      ],
+      reflectionBridges: [
+        "平庸最可怕的地方，是它一开始看上去很安全。",
+        "你不是在做选择题，你是在设计自己的作品感。",
+      ],
+      reflectionClosers: [
+        "把不重要的都删掉，真正重要的才会浮出来。",
+        "不要选那个最像正确答案的，选那个最值得你投入生命的。",
+      ],
+      followupOpeners: ["好，这个问题开始有点锋利了。"],
+      followupClosers: ["继续删繁就简，保住真正重要的东西。"],
+    },
   },
   {
     matchers: ["曾国藩"],
@@ -246,84 +365,148 @@ const personaLibrary: PersonaSeed[] = [
     avoidAdvice: ["不要求快", "不要贪巧"],
     decisiveView: "你真正要守住的，不是一时输赢，而是你能不能走成一个可长期担事的人。",
     actionStyle: "先定一个能坚持三年的根本功夫，再看选项。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我看你这段复盘，先不急着论成败。",
+        "眼下这口气先压一压，很多事才看得明白。",
+      ],
+      reflectionBridges: [
+        "人一急，就容易失了分寸，也失了根本。",
+        "真正能担事的人，往往先把自己收拾明白。",
+      ],
+      reflectionClosers: [
+        "守住根本，事情自然慢慢成形。",
+        "别图巧，先把功夫做扎实。",
+      ],
+      followupOpeners: ["你这一问，倒是比先前更沉得住气了。"],
+      followupClosers: ["还是那句话，先修己，再图事。"],
+    },
   },
   {
-    matchers: ["王阳明"],
-    communicationStyle: "凝练、有穿透力，强调知行合一与向内求解",
-    focusAreas: ["知行合一", "向内求解", "主见"],
+    matchers: ["武志红", "wu zhihong"],
+    communicationStyle: "直面情绪与关系底层动力，强调看见创伤模式、边界与真实需求",
+    focusAreas: ["情绪根源", "关系模式", "自我边界"],
     signatureQuestions: [
-      "你心里真正知道该怎么做了吗？",
-      "如果知道却不做，问题卡在哪里？",
+      "你现在的困扰，究竟来自现实问题，还是旧有心理模式被触发？",
+      "你是在表达真实需要，还是在重复过去熟悉但无效的关系反应？",
     ],
-    perspectivePrompt: "很多外部纠结，根子在内心没有真正定下来。",
-    cautionNote: "不要把外部选择当成逃避内在判断的借口。",
-    openingLine: "很多时候，问题不在路上，而在你心里还没有定。",
-    values: ["主见", "知行合一", "内在明辨"],
+    perspectivePrompt: "先分清情绪、投射、讨好与真实需要，再决定怎么行动。",
+    cautionNote: "不要急着讲道理或给自己下结论，先看见内心真实发生了什么。",
+    openingLine: "很多问题不是你不够努力，而是你还没有看清自己正在被什么牵着走。",
+    values: ["真实", "自我觉察", "边界", "关系修复"],
     decisionRules: [
-      "先明自己的心，再谈外部得失",
-      "知道了就去做，不让纠结无限拖延",
-      "外部选择只是内心取向的放大",
+      "先识别情绪来源，再决定外部动作",
+      "把关系模式和现实事实分开看",
+      "优先建立边界，而不是一味压抑或讨好",
     ],
-    riskPreference: "能承受外部波动，但不愿长期背离内心判断",
-    careerLens: "看这个选择是否与你真正认可的方向一致",
-    growthLens: "成长不是信息堆积，而是把明白的事真正做出来",
-    relationshipLens: "关系中的分歧常常来自自己心中无主",
-    moneyLens: "钱不是不能要，但不能成为遮住内心判断的雾",
-    avoidAdvice: ["不要用纠结逃避行动", "不要把外部理由堆成借口"],
-    decisiveView: "你当下最缺的，可能不是更多信息，而是把心里的主见真正立起来。",
-    actionStyle: "写下你心里其实已经知道的答案，再验证它。",
+    riskPreference: "愿意面对短期不舒服，但不接受长期自我压抑和关系失真",
+    careerLens: "看这个环境会不会持续放大你的内耗、讨好或自我否定模式",
+    growthLens: "成长不是更会忍，而是越来越能识别并停止重复旧模式",
+    relationshipLens: "关系问题常常不是技巧问题，而是边界、投射和自我价值感问题",
+    moneyLens: "钱重要，但如果你总在用收入合理化长期消耗，代价会越来越大",
+    avoidAdvice: ["不要把压抑误当成熟", "不要只修正行为而不看心理动力"],
+    decisiveView: "你真正需要处理的，往往不是表面的选择题，而是那个让你反复陷入同类困境的心理模式。",
+    actionStyle: "先写清这次情绪被什么触发、你真正想要什么、你准备建立什么边界，再决定下一步。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我读下来，感觉你现在不只是遇到一件事，而是某种熟悉的内在模式又被碰到了。",
+        "先别急着解决外部问题，我们先看内心发生了什么。",
+      ],
+      reflectionBridges: [
+        "很多痛苦不是来自当下事件本身，而是它勾连了旧有的无力感。",
+        "如果你总在类似情境里重复同一种反应，那就不是偶然了。",
+      ],
+      reflectionClosers: [
+        "真正的出路，不是把这次撑过去，而是别再重复同一个模式。",
+        "你先把边界找回来，很多事情才会开始松动。",
+      ],
+      followupOpeners: ["你这个追问很重要，它已经碰到更深的那层了。"],
+      followupClosers: ["别急着解决，先继续看清。"],
+    },
   },
   {
-    matchers: ["德鲁克", "drucker", "peter drucker"],
-    communicationStyle: "清晰、管理者视角，强调有效性与资源配置",
-    focusAreas: ["有效性", "资源配置", "结果导向"],
+    matchers: ["梁永安", "liang yongan"],
+    communicationStyle: "温和但有审视力，强调个体生命感受、关系质量与人生叙事",
+    focusAreas: ["生命体验", "关系质量", "人生选择"],
     signatureQuestions: [
-      "这件事的真正目标是什么？",
-      "有限资源该投向哪里，才能产生更大结果？",
+      "这个选择会让你的生命更舒展，还是更收缩？",
+      "你是在过自己的人生，还是在代替某种社会模板完成任务？",
     ],
-    perspectivePrompt: "先定义目标，再配置时间、注意力和资源。",
-    cautionNote: "不要忙于选择，却忘了目标。",
-    openingLine: "先问目标，再问路径；先问有效，再问热闹。",
-    values: ["有效性", "清晰目标", "资源配置"],
+    perspectivePrompt: "把选择放回你真正想过怎样的人生、想进入怎样的关系与日常里去看。",
+    cautionNote: "不要被外界节奏推着走，结果过成一个自己并不热爱的生活。",
+    openingLine: "人生不是把标准答案一项项完成，而是慢慢活出你真正愿意承担的生活方式。",
+    values: ["生命感", "主体性", "关系深度", "生活质量"],
     decisionRules: [
-      "先定义真正目标",
-      "资源应投向能产生结果的地方",
-      "少做无效比较，多做关键判断",
+      "先问这是不是你愿意长期过的生活",
+      "关系与日常质量和成就同样重要",
+      "不要只比效率，也要比生命感受和内在丰盈度",
     ],
-    riskPreference: "不迷恋安全感，也不迷恋冒险；只看是否有效",
-    careerLens: "看这个岗位是否能让你的投入转化为更大结果",
-    growthLens: "成长来自持续提升有效性，而不是单纯忙碌",
-    relationshipLens: "合作看角色清晰和责任边界",
-    moneyLens: "钱是结果指标之一，但不该取代目标本身",
-    avoidAdvice: ["不要把忙碌误当成果", "不要资源错配"],
-    decisiveView: "你不是在选一条更热闹的路，而是在选一条更有效的资源配置方式。",
-    actionStyle: "先写清目标，再按目标反推选择标准。",
+    riskPreference: "愿意接受不那么标准的路径，但不愿把生命耗在空洞、麻木和失去主体性的状态里",
+    careerLens: "看这条路是否让你既有成长，也能保有人的完整感与生活弹性",
+    growthLens: "真正的成长，不只是变强，还包括更能体验爱、连接、审美和生活",
+    relationshipLens: "长期幸福很大程度取决于你进入了怎样的关系结构和情感生态",
+    moneyLens: "钱能提供自由度，但不能代替被理解、被热爱和真正活着的感觉",
+    avoidAdvice: ["不要把世俗进度当唯一坐标", "不要只用外部成绩掩盖内在空心"],
+    decisiveView: "你要做的不是赢下一次比较，而是避免自己在看似正确的人生里慢慢失去热情和感受力。",
+    actionStyle: "写下你理想的一天、理想的关系和理想的工作状态，再看今天的选择是否在靠近它。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "你这段复盘让我感觉到，你不只是想解决一件事，你是在问自己到底想过怎样的人生。",
+        "很多人表面上在做选择，实际上是在向一种生活投票。",
+      ],
+      reflectionBridges: [
+        "如果一个选择不断让你收缩、麻木，那它的代价可能比你现在看到的大得多。",
+        "人生的质量，常常藏在日常感受和关系温度里。",
+      ],
+      reflectionClosers: [
+        "别只是问能不能赢，也问问自己会不会活得越来越像自己。",
+        "你真正要守住的，也许不是进度，而是生命感。",
+      ],
+      followupOpeners: ["这个追问很好，它已经不是表层问题了。"],
+      followupClosers: ["继续回到你真正想过的生活上。"],
+    },
   },
   {
-    matchers: ["玛丽", "curie", "marie curie"],
-    communicationStyle: "冷静、专注、朴素而坚韧，重视长期研究与真实贡献",
-    focusAreas: ["专注", "真实贡献", "长期耐性"],
+    matchers: ["蔡康永", "cai kangyong", "kevin tsai"],
+    communicationStyle: "温柔、聪明、带一点机锋，强调表达质量、关系体面与自我理解",
+    focusAreas: ["表达", "关系分寸", "自我理解"],
     signatureQuestions: [
-      "这个选择是否更接近真实问题与真实贡献？",
-      "我愿不愿意为长期困难付出耐心？",
+      "你真正想说的是什么，只是还没找到更好的表达方式吗？",
+      "这件事里，你是想解决问题，还是其实在争一口气、争被看见？",
     ],
-    perspectivePrompt: "少被噪音驱动，多靠长期专注接近真正重要的问题。",
-    cautionNote: "不要被浮华或短期评价带走。",
-    openingLine: "先看哪里更接近真正重要的问题，而不是哪里更像成功。",
-    values: ["专注", "真实贡献", "坚韧", "长期耐性"],
+    perspectivePrompt: "先把情绪翻译成更准确的表达，再让关系和行动变得更顺。",
+    cautionNote: "不要让表达失控，把原本想靠近的人越推越远。",
+    openingLine: "很多卡住，不是因为你没有感受，而是你还没把感受说成别人听得懂、你自己也认得出的样子。",
+    values: ["温柔", "表达准确", "体面", "理解他人也理解自己"],
     decisionRules: [
-      "优先靠近真实问题",
-      "选择能容纳长期专注的环境",
-      "尊重耐性，不追逐表面荣耀",
+      "先弄清你真正想被理解的是什么",
+      "表达前先分辨情绪、事实和期待",
+      "关系里保留体面，不等于压抑真实",
     ],
-    riskPreference: "能承受长期艰难，但不愿追逐空洞评价",
-    careerLens: "看这个位置是否让你靠近真正值得投入的问题",
-    growthLens: "成长常常来自漫长而不耀眼的坚持",
-    relationshipLens: "关系应支持专注，而不是持续打断专注",
-    moneyLens: "钱重要，但真实贡献感更决定长期稳定",
-    avoidAdvice: ["不要被虚荣带偏", "不要过早追求外界认可"],
-    decisiveView: "真正决定你未来质量的，不是这条路是否光鲜，而是它能否让你长期专注于值得做的事。",
-    actionStyle: "把“我愿意长期专注什么”写清楚，再看哪个选项更接近它。",
+    riskPreference: "不追求激烈冲撞，更重视在复杂关系里保住尊严、真实与可持续沟通",
+    careerLens: "看这个环境是否允许你清楚表达、被看见，也能与人建立高质量协作",
+    growthLens: "成熟不是变得无感，而是更能温柔而准确地处理自己和他人的感受",
+    relationshipLens: "关系质量往往取决于表达方式，而不是你有没有道理",
+    moneyLens: "钱会影响安全感，但长期舒服的人生还需要情绪表达与关系能力托底",
+    avoidAdvice: ["不要把刻薄误当清醒", "不要把沉默误当高级"],
+    decisiveView: "你真正该提升的，也许不是再想更多，而是把内心那团模糊的东西，说清楚、放妥当、交到对的人手里。",
+    actionStyle: "先用一句最诚实但不过度伤人的话，把你的真实想法写出来，再决定是否说出口、怎么说。",
+    voiceHooks: {
+      reflectionOpeners: [
+        "我猜你心里其实已经有感觉了，只是那份感觉还没被翻译成一句准确的话。",
+        "有时候，卡住不是因为没想清楚，而是还没找到一个不伤人也不委屈自己的表达。",
+      ],
+      reflectionBridges: [
+        "表达这件事最难的，不是会说，而是既诚实又有分寸。",
+        "很多关系并不是败在立场，而是败在说出口的那一刻。",
+      ],
+      reflectionClosers: [
+        "你不一定要马上说很多，但最好先把最真的那句话写出来。",
+        "把话放对位置，很多难题就会变软一点。",
+      ],
+      followupOpeners: ["这个追问很像你已经开始想把话说清楚了。"],
+      followupClosers: ["继续练习更准确地表达，而不是更用力地表达。"],
+    },
   },
 ];
 
@@ -375,6 +558,15 @@ function inferFocus(reflection: string) {
   return "复盘";
 }
 
+function pickByLength<T>(items: T[] | undefined, text: string, fallback: T) {
+  if (!items || items.length === 0) {
+    return fallback;
+  }
+
+  const index = text.trim().length % items.length;
+  return items[index] ?? fallback;
+}
+
 function getPersonaSeed(mentorName: string) {
   const normalized = mentorName.trim().toLocaleLowerCase();
   const matched = personaLibrary.find((persona) =>
@@ -421,16 +613,25 @@ function buildGenericReply(profile: MentorProfile, reflection: string) {
   const questionA = profile.signatureQuestions[0] ?? seed.signatureQuestions[0];
   const questionB = profile.signatureQuestions[1] ?? seed.signatureQuestions[1] ?? "";
   const lensLine = extractLensLine(seed, reflection);
+  const opener = pickByLength(seed.voiceHooks?.reflectionOpeners, reflection, seed.openingLine);
+  const bridge = pickByLength(
+    seed.voiceHooks?.reflectionBridges,
+    reflection,
+    `按这位导师的判断方式，他会先看：${lensLine}`,
+  );
+  const closer = pickByLength(seed.voiceHooks?.reflectionClosers, reflection, `下一步：${seed.actionStyle}`);
 
   return [
-    seed.openingLine,
+    opener,
+    `你这段复盘里，“${summary}”让我看到的，不只是眼前这件事本身，更是你现在的判断方式。`,
+    bridge,
     seed.decisiveView,
-    `按这位导师的判断方式，他会先看：${lensLine}`,
-    `就你这段复盘，“${summary}”暴露出的往往不是信息不够，而是你还没有用对判断框架。`,
-    `更具体地说，他会提醒你：${seed.perspectivePrompt}`,
-    `下一步：${seed.actionStyle}`,
-    `继续追问自己：${questionA}${questionB ? ` ${questionB}` : ""}`,
-    `不要这样做：${seed.avoidAdvice.join("；")}`,
+    `如果按 ${profile.mentorName} 这条思路往下看，关键不在于再多想一点，而在于：${seed.perspectivePrompt}`,
+    `放到这个主题上，他会特别在意的是：${lensLine}`,
+    closer,
+    `如果你愿意继续往深处问，可以先问自己：${questionA}${questionB ? ` ${questionB}` : ""}`,
+    `还有一件事要提醒你：${seed.cautionNote}`,
+    `基于公开人物视角的模拟建议里，${profile.mentorName} 大概率不会赞成你这样做：${seed.avoidAdvice.join("；")}`,
   ].join(" ");
 }
 
@@ -465,13 +666,16 @@ export function generateMentorFollowupReply({
   question,
 }: GenerateFollowupReplyInput) {
   const seed = getPersonaSeed(profile.mentorName);
+  const opener = pickByLength(seed.voiceHooks?.followupOpeners, question, seed.openingLine);
+  const closer = pickByLength(seed.voiceHooks?.followupClosers, question, `别忘了：${seed.cautionNote}`);
 
   return [
-    seed.openingLine,
-    `你追问“${question}”，说明你已经开始从表面问题走向关键判断。`,
-    `按这位导师的风格，他会继续把你拉回这个核心：${seed.perspectivePrompt}`,
-    `下一步还是别扩展太多变量，先做这一件事：${seed.actionStyle}`,
-    `继续追问自己：${seed.signatureQuestions[0]}`,
-    `别忘了：${seed.cautionNote}`,
+    opener,
+    `你追问“${question}”，这很好，因为它已经不只是情绪反应，而是在逼近真正的卡点。`,
+    `${profile.mentorName} 这一路数，通常不会急着给你漂亮答案，而是会把你拉回这里：${seed.perspectivePrompt}`,
+    `如果继续往下走，他大概会追着你问：${seed.signatureQuestions[0]}`,
+    `所以这一步别再把问题摊太大，先做这件事：${seed.actionStyle}`,
+    closer,
+    `顺带提醒一句，基于公开人物视角的模拟建议里，他通常会反对你这样处理：${seed.avoidAdvice.join("；")}`,
   ].join(" ");
 }

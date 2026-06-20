@@ -8,7 +8,7 @@ export const mentorOptions = [
   "史蒂夫·乔布斯",
   "曾国藩",
   "纳瓦尔",
-  "王阳明",
-  "德鲁克",
-  "Marie Curie",
+  "武志红",
+  "梁永安",
+  "蔡康永",
 ];
