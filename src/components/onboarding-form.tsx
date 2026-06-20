@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { mentorOptions } from "@/lib/data/mentors";
+import { mentorCategories } from "@/lib/data/mentors";
 
 type OnboardingFormProps = {
   initialMentors: string[];
@@ -183,17 +183,31 @@ export function OnboardingForm({ initialMentors }: OnboardingFormProps) {
             当前推荐列表里的所有导师，都已升级为高质量蒸馏版本。
           </p>
         </div>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {mentorOptions.map((mentor) => (
-            <button
-              key={mentor}
-              type="button"
-              onClick={() => fillRecommendedMentor(mentor)}
-              className="rounded-3xl border border-slate-200 bg-white px-4 py-5 text-left text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
-            >
-              <div className="text-sm text-slate-500">公开人物</div>
-              <div className="mt-2 text-lg font-medium">{mentor}</div>
-            </button>
+        <div className="mt-5 space-y-6">
+          {mentorCategories.map((category) => (
+            <div key={category.label}>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+                  {category.label}
+                </span>
+                <span className="text-sm text-slate-400">
+                  {category.mentors.length} 位公开人物
+                </span>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {category.mentors.map((mentor) => (
+                  <button
+                    key={`${category.label}-${mentor}`}
+                    type="button"
+                    onClick={() => fillRecommendedMentor(mentor)}
+                    className="rounded-3xl border border-slate-200 bg-white px-4 py-5 text-left text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+                  >
+                    <div className="text-sm text-slate-500">{category.label}</div>
+                    <div className="mt-2 text-lg font-medium">{mentor}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

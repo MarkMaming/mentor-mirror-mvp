@@ -1,14 +1,21 @@
-export const mentorOptions = [
-  "稻盛和夫",
-  "查理·芒格",
-  "奥普拉·温弗瑞",
-  "埃隆·马斯克",
-  "杨绛",
-  "李开复",
-  "史蒂夫·乔布斯",
-  "曾国藩",
-  "纳瓦尔",
-  "武志红",
-  "梁永安",
-  "蔡康永",
+export type MentorCategory = {
+  label: string;
+  mentors: string[];
+};
+
+export const mentorCategories: MentorCategory[] = [
+  {
+    label: "投资",
+    mentors: ["查理·芒格", "巴菲特", "段永平", "纳瓦尔"],
+  },
+  {
+    label: "成长",
+    mentors: ["埃隆·马斯克", "李开复", "梁永安"],
+  },
+  {
+    label: "心理",
+    mentors: ["武志红", "蔡康永"],
+  },
 ];
+
+export const mentorOptions = mentorCategories.flatMap((category) => category.mentors);
